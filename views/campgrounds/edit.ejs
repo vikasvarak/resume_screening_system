@@ -1,0 +1,105 @@
+<% layout('layouts/boilerplate')%>
+    <div class="row">
+        <h1 class="text-center">Edit Resume</h1>
+        <div class="col-6 offset-3">
+            <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" novalidate class="validated-form">
+                <div class="mb-3">
+                    <label class="form-label" for="name">Enter your Name</label>
+                    <input class="form-control" type="text" id="name" name="campground[name]"
+                        value="<%=campground.name%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="careerObjective">Career Objective</label>
+                    <textarea class="form-control" type="text" id="careerObjective" name="campground[careerObjective]"
+                        value="<%=campground.careerObjective%>" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- <div class="mb-3">
+                    <label class="form-label">Qualification</label>
+                    <input class="form-control" type="text" id="ssc" name="campground[ssc]" value="<%=campground.ssc%>"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div> -->
+                <div class="mb-3 form-group row">
+                    <!-- <label class="form-label">Qualification</label> -->
+                    <div class="col-4">
+                        <label class="form-label" for="ssc">SSC Percentage</label>
+                        <input class="form-control" id="ssc" name="campground[ssc]" type="text"
+                            value="<%=campground.ssc%>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label" for="hsc">HSC Percentage</label>
+                        <input class="form-control" id="hsc" name="campground[hsc]" type="text"
+                            value="<%=campground.hsc%>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <label class="form-label" for="graduation">Graduation CGPA</label>
+                        <input class="form-control" id="graduation" name="campground[graduation]" type="text"
+                            value="<%=campground.graduation%>" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="image">Image Url</label>
+                    <input class="form-control" type="text" id="image" name="campground[image]"
+                        value="<%=campground.image%>" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div> -->
+                <div class="mb-3">
+                    <label class="form-label" for="skill">Skills</label>
+                    <input class="form-control" type="text" id="skill" name="campground[skill]"
+                        value="<%=campground.skill%>" required></input>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="project">Projects</label>
+                    <textarea class="form-control" type="text" id="project" name="campground[project]"
+                        value="<%=campground.project%>" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="internship">Internships</label>
+                    <textarea class="form-control" type="text" id="internship" name="campground[internship]"
+                        value="<%=campground.internship%>" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="achievement">Achievements</label>
+                    <textarea class="form-control" type="text" id="achievement" name="campground[achievement]"
+                        value="<%=campground.achievement%>" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-info">Update Resume</button>
+                </div>
+            </form>
+            </form>
+            <a href="/campgrounds/<%= campground._id%>">Back To Resume</a>
+
+        </div>
+    </div>

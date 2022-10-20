@@ -1,0 +1,53 @@
+<% layout('layouts/boilerplate')%>
+
+    <h1 class="text-center">Your Resume</h1>
+    <!-- <div>
+        <a href="/campgrounds/new">Add Compnies</a>
+    </div> -->
+    <% for (let campground of campgrounds){%>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="card mb-3">
+                    <!-- <div class="col-md-4">
+                        <img class="img-fluid" alt="" src="<%=campground.image%>">
+                    </div> -->
+                    <div class="card-body">
+                        <h5 class="card-title">Name -
+                            <%= campground.name %>
+                        </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>Career Objective -</b><br>
+                            <%= campground.careerObjective %>
+                        </li>
+                        <li class="list-group-item"><b>Qualification - </b><br> SSC Percentage -
+                            <%= campground.ssc%>% <br> HSC Percentage -
+                                <%= campground.hsc%>% <br> Graduation CGPA -
+                                    <%= campground.graduation%>/10
+                        </li>
+                        <li class="list-group-item"><b>Skills -</b>
+                            <%= campground.skill%>
+                        </li>
+                        <li class="list-group-item"> <b>Projects -</b><br>
+                            <%= campground.project%>
+                        </li>
+                        <li class="list-group-item"> <b>Internship -</b><br>
+                            <%= campground.internship%>
+                        </li>
+                        <li class="list-group-item"> <b>Achievements -</b><br>
+                            <%= campground.achievement%>
+                        </li>
+                        <li class="list-group-item"> <a class="btn btn-primary"
+                                href="/campgrounds/<%=campground._id%>/edit">Edit
+                                <%=campground.companyName%>
+                            </a>
+                            <form class="d-inline" action="/campgrounds/<%=campground._id%>?_method=DELETE"
+                                method="POST">
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <% }%>
